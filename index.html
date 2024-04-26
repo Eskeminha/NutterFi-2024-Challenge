@@ -34,6 +34,23 @@
             margin-bottom: 20px; /* Space below the countdown */
         }
 
+        p#countdown {
+            background-color: #1C1C1E; /* Dark background for the countdown */
+            color: #FFFFFF;
+            font-size: 24px;
+            border: 1px solid #343436; /* Subtle border for the countdown */
+            padding: 10px 20px;
+            display: table; /* Wraps the content tightly */
+            margin: 0 auto; /* Center the paragraph block */
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Shadow for depth */
+        }
+
+        .countdown-container {
+            display: block; /* Use block to fill the width of the container */
+            text-align: center; /* Keeps the text centered */
+        }
+
         .twitch-link {
             display: block; /* Block display to accommodate larger image */
             margin: 20px auto; /* Centering the link */
@@ -54,8 +71,12 @@
 </head>
 <body>
     <h1>NutterFi's 2024 App Release Countdown</h1>
-    <p id="countdown"></p>
-    <p>Click on the icon to visit NutterFi on Twitch:</p>
+    <div class="countdown-container">
+        <p id="countdown"></p>
+    </div>
+    <div class="countdown-container">
+        <p>Click on the icon to visit NutterFi on Twitch:</p>
+    </div>
     <a href="https://www.twitch.tv/nutterfi" target="_blank" class="twitch-link">
         <img src="nutterfi.png" alt="NutterFi Logo" class="twitch-icon">
     </a>
