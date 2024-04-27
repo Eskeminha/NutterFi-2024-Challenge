@@ -5,9 +5,9 @@
     <title>NutterFi's 2024 App Release Countdown</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #0E0E10; /* Dark background color */
-            color: #C0C0C0; /* Updated text color for better contrast */
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #0E0E10;
+            color: #C0C0C0;
             padding: 20px;
             text-align: center;
             margin: 0;
@@ -17,43 +17,53 @@
             justify-content: center;
         }
 
+        footer {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #0E0E10;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 10px 0;
+            font-family: Arial, sans-serif;
+        }
+
         h1 {
-            color: #FFFFFF; /* Light color text for heading */
-            margin-bottom: 10px;
+            color: #FFFFFF;
+            margin-bottom: 45px;
         }
 
         p {
-            background-color: #1C1C1E; /* Dark background for the countdown */
+            background-color: #1C1C1E;
             color: #FFFFFF;
             font-size: 24px;
-            border: 0px solid #343436; /* Subtle border for the countdown */
             padding: 10px 20px;
             display: inline-block;
             border-radius: 6px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Shadow for depth */
-            margin-bottom: 20px; /* Space below the countdown */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
         }
 
         .countdown-container {
-            display: block; /* Use block to fill the width of the container */
-            text-align: center; /* Keeps the text centered */
+            display: block;
+            text-align: center;
         }
 
         .twitch-link {
-            display: block; /* Block display to accommodate larger image */
-            margin: 20px auto; /* Centering the link */
+            display: block;
+            margin: 20px auto;
         }
 
         .twitch-icon {
-            height: 200px; /* Set height to 300px */
-            border-radius: 0%; /* Makes the image round */
-            overflow: hidden; /* Ensures the image retains a round shape */
-            cursor: pointer; /* Changes the cursor to indicate a link */
-            border: 2px solid #fff; /* Adds a white border */
+            height: 110px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid #fff;
         }
 
         .twitch-icon:hover {
-            border-color: #76C7FF; /* Light blue border on hover */
+            border-color: #76C7FF;
         }
     </style>
 </head>
@@ -67,12 +77,17 @@
         <img src="nutterfi.png" alt="NutterFi Logo" class="twitch-icon">
     </a>
 
-        <a>Click on the icon above to visit NutterFi on Twitch</a>
-        <h4>Also, check his Github at <a href="https://github.com/nutterfi" target="_blank">https://github.com/nutterfi</a></h4>
+    <a>Click on the icon above to visit NutterFi on Twitch.</a>
+    <h4>Also, check his Github at <a href="https://github.com/nutterfi" target="_blank">https://github.com/nutterfi</a>.</h4>
+    
+    <footer>
+        <a>Made by Eskeminha &copy; <span id="current-year"></span></a>
+    </footer>
+
     <script>
         function updateCountdown() {
             const now = new Date();
-            const newYear = new Date(now.getFullYear() + 1, 0, 1); // First of January next year
+            const newYear = new Date(now.getFullYear() + 1, 0, 1);
             const totalSeconds = Math.floor((newYear - now) / 1000);
             const days = Math.floor(totalSeconds / 3600 / 24);
             const hours = Math.floor(totalSeconds / 3600) % 24;
@@ -82,8 +97,8 @@
             document.getElementById('countdown').innerHTML = `${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds left until DEADLINE!`;
         }
 
-        // Update the countdown every second
         setInterval(updateCountdown, 1000);
+        document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
